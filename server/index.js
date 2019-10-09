@@ -1,9 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors')
+
 
 const SpotifyClient = require('./SpotifyClient');
 
 const app = express();
+app.use(cors())
+
 
 app.set('port', (process.env.API_PORT || 3001));
 
@@ -86,4 +90,4 @@ app.post('/api/login', (req, res) => {
   ), FAKE_DELAY);
 });
 
-app.listen(3000, console.log("App listen at port 3000"))
+app.listen(3001, console.log("App listen at port 3001"))
