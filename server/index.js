@@ -9,7 +9,7 @@ const app = express();
 app.use(cors())
 
 
-app.set('port', (process.env.API_PORT || 3001));
+app.set('port', (process.env.API_PORT || 3002));
 
 if (process.env.NODE_ENV !== 'TEST') {
   app.use(morgan('combined'));
@@ -44,7 +44,7 @@ const authenticatedRoute = ((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello world')
+  res.send('Hello world asdsd')
 })
 
 app.get('/api/check_token', (req, res) => {
@@ -90,4 +90,4 @@ app.post('/api/login', (req, res) => {
   ), FAKE_DELAY);
 });
 
-app.listen(3001, console.log("App listen at port 3001"))
+app.listen(3002, console.log("App listen at port 3002"))
