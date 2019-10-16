@@ -5,16 +5,14 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import AlbumsContainer from "./AlbumsContainer";
 import "../styles/App.css";
 
-function App() {
-  return (
-    <div className='ui grid'>
-      <TopBar />
-      <div className='spacer row' />
-      <div className='row'>
-        <AlbumsContainer />
-      </div>
+const App = () => (
+  <div className='ui grid'>
+    <TopBar />
+    <div className='spacer row' />
+    <div className='row'>
+      <Route path='/albums' component={AlbumsContainer} />
     </div>
-  );
-}
+  </div>
+);
 
 export default App;
